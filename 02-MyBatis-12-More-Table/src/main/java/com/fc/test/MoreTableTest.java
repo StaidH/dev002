@@ -1,0 +1,71 @@
+package com.fc.test;
+
+import com.fc.dao.DepartmentDao;
+import com.fc.dao.EmployeeDao;
+import com.fc.dao.StudentDao;
+import com.fc.dao.SubjectDao;
+import com.fc.entity.Department;
+import com.fc.entity.Employee;
+import com.fc.entity.Student;
+import com.fc.entity.Subject;
+import com.fc.util.MybatisUtil;
+import org.junit.Test;
+
+import java.util.List;
+
+public class MoreTableTest {
+    @Test
+    public void testSubject() {
+        SubjectDao subjectDao = MybatisUtil.getMapper(SubjectDao.class);
+
+        List<Subject> subjects = subjectDao.findAll();
+
+        for (Subject subject : subjects) {
+            System.out.println(subject);
+        }
+
+        MybatisUtil.commit();
+    }
+
+    @Test
+    public void testStudent() {
+        StudentDao studentDao = MybatisUtil.getMapper(StudentDao.class);
+
+        List<Student> students = studentDao.findAll();
+
+        for (Student student : students) {
+            System.out.println(student);
+        }
+
+        MybatisUtil.commit();
+    }
+
+    @Test
+    public void testDepartment() {
+        DepartmentDao departmentDao = MybatisUtil.getMapper(DepartmentDao.class);
+
+        List<Department> departments = departmentDao.findAll();
+
+        for (Department department : departments) {
+            System.out.println(department);
+        }
+
+        MybatisUtil.commit();
+    }
+
+    @Test
+    public void testEmployee() {
+        EmployeeDao employeeDao = MybatisUtil.getMapper(EmployeeDao.class);
+
+        List<Employee> employees = employeeDao.findAll();
+
+        for (Employee employee : employees) {
+            System.out.println(employee);
+        }
+
+        MybatisUtil.commit();
+    }
+}
+
+
+
